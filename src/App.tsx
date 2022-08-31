@@ -3,7 +3,7 @@
 
 // 上の行を追加することでtsの型判定を無視することができる
 
-import React from 'react';
+import React, {useEffect}  from 'react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -14,38 +14,40 @@ import styled from 'styled-components';
 
 
 
-const swiper = new Swiper(".swiper", {
-
-//jsをいかに記載
-  
-  /* slidesPerView: ｛表示枚数｝,　表示枚数を増やしたいときこの行を追加 */
-
-  slidesPerView: 1, //通常(769px以下)画面表示枚数を一枚に指定
-  breakpoints: {
-    // 768px以上の場合
-    768: {
-      slidesPerView: 3
-    }
-  },
-  
-    // ページネーションが必要なら追加
-  pagination: {
-    el: ".swiper-pagination"
-  },
-  // ナビボタンが必要なら追加
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  }
-});
-
-
 function App() {
   
+  useEffect(() => {
+      new Swiper(".swiper", {
+      
+      //jsをいかに記載
+        
+        /* slidesPerView: ｛表示枚数｝,　表示枚数を増やしたいときこの行を追加 */
+      
+        slidesPerView: 1, //通常(769px以下)画面表示枚数を一枚に指定
+        breakpoints: {
+          // 768px以上の場合
+          768: {
+            slidesPerView: 3
+          }
+        },
+        
+          // ページネーションが必要なら追加
+        pagination: {
+          el: ".swiper-pagination"
+        },
+        // ナビボタンが必要なら追加
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+      });
+    })
+    
+
 
   return (
     
-    
+
     <>
 
     
